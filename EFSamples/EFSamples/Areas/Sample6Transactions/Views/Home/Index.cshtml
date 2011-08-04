@@ -1,0 +1,19 @@
+﻿@model EFSamples.Areas.Sample6Transactions.Views.Home.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+Checking Account=@Model.CheckingAccount.Balance.ToString("c")
+
+<br /><br />
+
+Savings Account=@Model.SavingsAccount.Balance.ToString("c")
+
+<br /><br />
+
+@Html.ActionLink("Tranfer from Checkings to Savings", "TransferFromCheckingsToSavings")
+<br /><br />
+@Html.ActionLink("Tranfer from Savings to Checkings", "TransferFromSavingsToChecking")

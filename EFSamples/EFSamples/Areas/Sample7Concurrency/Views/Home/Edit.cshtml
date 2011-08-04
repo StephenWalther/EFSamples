@@ -1,0 +1,36 @@
+﻿@model EFSamples.Areas.Sample7Concurrency.Models.Checking
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>CheckingAccount</legend>
+
+        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.Version)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Balance)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Balance)
+            @Html.ValidationMessageFor(model => model.Balance)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

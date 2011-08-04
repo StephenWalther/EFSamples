@@ -1,0 +1,24 @@
+﻿@model IEnumerable<EFSamples.Areas.Sample2OneMany.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<ul>
+@foreach (var category in Model) {
+    <li>
+        @category.Name
+        <ul>
+            @foreach (var m in category.Movies) {
+                <li>@m.Title</li>
+            }
+        </ul>
+    </li>
+}
+</ul>

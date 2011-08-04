@@ -1,0 +1,20 @@
+﻿@model IEnumerable<EFSamples.Areas.Sample4LazyLoading.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Default</h2>
+
+<ul>
+@foreach (var category in Model) {
+    <li>
+        @category.Name
+        <ul>
+            @foreach (var m in category.Movies) {
+                <li>@m.Title</li>
+            }
+        </ul>
+    </li>
+}
+</ul>
